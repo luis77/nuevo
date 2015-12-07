@@ -1,0 +1,38 @@
+<div class="row"><!--atributos de bootstrap. todos se pueden buscar en getbootstrap.com esta la documentacion-->
+  <div class="col-md-3 center-block no-float"><!--atributos de bootrstrap. el center block centra pero como el col-md tiene un float left impide centrarlo, por eso se creo la clase no-float y se definio en el scss-->
+    
+    <h2><i class="fa fa-star"></i> Registrarse</h2><!--la clase fa fa-star es de fontawesome-->
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {role: "form"}) do |f| %> <!--html: {role: "form"}) sirve para agregar atributos a la etiquete form, tenemos que especificar un hash con todas las etiquetas html q queremos agregar. con esto el generador sabe q tiene q agregar este rol a la etiqueta del formulario-->
+      <%= devise_error_messages! %>
+
+      <div class="field form-group"><!--los formularios de bootstrap cada grupo de controles tiene una clase form-group-->
+
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, class: "form-control" %><!--form-control es la clase de bootstrap q tienen los controles -->
+      </div>
+
+      <div class="field form-group"><!--los formularios de bootstrap cada grupo de controles tiene una clase form-group-->
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "off", class: "form-control" %><!--form-control es la clase de bootstrap q tienen los controles -->
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %><!--form-control es la clase de bootstrap q tienen los controles -->
+      </div>
+
+      <div class="actions, text-center"><!--text center es una clase de bootstrap-->
+        <%= f.submit "Sign up", class: "btn btn-info" %><!-- class: "btn btn-info" es un boton azul de bootstrap-->
+
+      </div>
+    <% end %>
+    <div class="text-center"><!--text center es una clase de bootstrap-->
+      <%= render "devise/shared/links" %>
+    </div>
+
+  </div>
+</div>
