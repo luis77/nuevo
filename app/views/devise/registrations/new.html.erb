@@ -5,11 +5,17 @@
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {role: "form"}) do |f| %> <!--html: {role: "form"}) sirve para agregar atributos a la etiquete form, tenemos que especificar un hash con todas las etiquetas html q queremos agregar. con esto el generador sabe q tiene q agregar este rol a la etiqueta del formulario-->
       <%= devise_error_messages! %>
+      
+      <% if session[:omniauth_errors] %> <!--si la seccion con los errores existe, los desplegamos-->
+        <div class="flash"> <%= session[:omniauth_errors]
+         %> </div>
+      <%end%>
+
 
       <div class="field form-group"><!--los formularios de bootstrap cada grupo de controles tiene una clase form-group-->
 
         <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, class: "form-control" %><!--form-control es la clase de bootstrap q tienen los controles -->
+        <%= f.email_field :email, autofocus: true, class: "form-control", value: get_email_oauth %><!--form-control es la clase de bootstrap q tienen los controles -->
       </div>
 
       <div class="field form-group"><!--los formularios de bootstrap cada grupo de controles tiene una clase form-group-->
