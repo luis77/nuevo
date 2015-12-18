@@ -1,6 +1,5 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
-require "omniauth-facebook"
 Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
@@ -8,6 +7,9 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = 'b0bc7e51db987ee5192a0324f16c6ae59eccdbf9b823dc461052e42173966bd13e7c0b4be65603994c82d86735596fd82a3613055c4bfbec721772c6d3395362'
+  
+  #omniauth
+  config.omniauth :facebook, ENV['FB_APP_ID'], ENV['FB_SECRET_KEY']
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -15,8 +17,6 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
-  config.omniauth :facebook, "461191960747451", "685a2bd2b0a7c7728a541c0416e41471"
-  OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE if Rails.env.development? #se agrega porque sino dara un error ssl. le va a decir a omniauth donde encontrar un certificado ca, un archivo
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 

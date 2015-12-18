@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}#indicamos q los callback o las respuestas de omniauth las va a manejar un controlador de nombre omniauth callbacks. osea q todas las veces que omniauth retonrne un hash de info porque el login ha sido valido, toda esa informacion las controlara ese controlador
+  #devise configurado para omniauth
+  devise_for :users, controllers: {
+  registrations: "users/registrations",
+  sessions: "users/sessions",
+  passwords: "users/passwords",
+  omniauth_callbacks: "users/omniauth_callbacks"}
+
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
