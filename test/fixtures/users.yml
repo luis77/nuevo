@@ -3,9 +3,14 @@
 # This model initially had no columns defined.  If you add columns to the
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
-#
-one: {}
+#cuando definimos objeto en yml es que NO ACEPTA IDENTACION(O SEA EL USO DE LA TECLA TAB) solo acepta espacios y tienen que ser consistentes siempre, en este caso se le dara dos espacios nadamas.
+# Aquí colocaremos los campos obligatorios del usuario
+one: 
+  email: mail@mail.com
+  username: user
 # column: value
 #
-two: {}
+two: 
+  email: mymail@mail.com
+  username: user_dos
 #  column: value

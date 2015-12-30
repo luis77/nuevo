@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151205192912) do
+ActiveRecord::Schema.define(version: 20151221210050) do
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "titulo"
+    t.text     "contenido"
+    t.string   "extension"
+    t.integer  "usuario_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "posts", ["usuario_id"], name: "index_posts_on_usuario_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

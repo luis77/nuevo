@@ -15,7 +15,13 @@
       <div class="field form-group"><!--los formularios de bootstrap cada grupo de controles tiene una clase form-group-->
 
         <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, class: "form-control"%><!--form-control es la clase de bootstrap q tienen los controles -->
+        <%= f.email_field :email, autofocus: true, class: "form-control" %><!--form-control es la clase de bootstrap q tienen los controles -->
+      </div>
+
+      <div class="field form-group"><!--los formularios de bootstrap cada grupo de controles tiene una clase form-group-->
+
+        <%= f.label :username %><br />
+        <%= f.text_field :username, class: "form-control"%><!--form-control es la clase de bootstrap q tienen los controles -->
       </div>
 
       <div class="field form-group"><!--los formularios de bootstrap cada grupo de controles tiene una clase form-group-->
