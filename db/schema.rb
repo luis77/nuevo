@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151221210050) do
+ActiveRecord::Schema.define(version: 20160104224311) do
+
+  create_table "attachments", force: :cascade do |t|
+    t.string   "nombre"
+    t.string   "extension"
+    t.integer  "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "attachments", ["post_id"], name: "index_attachments_on_post_id"
 
   create_table "posts", force: :cascade do |t|
     t.string   "titulo"
