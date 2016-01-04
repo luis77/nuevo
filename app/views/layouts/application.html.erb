@@ -9,11 +9,23 @@
 <body>
  	   <p class="notice" style="<%= "display:none;" if notice.nil? %>"><%= notice %></p><!--display none oculta el elemento. y el metodo nil? devuelve true si el objeto es nulo, y false si el objeto contiene algo. oculta el parrafo si no hay ninguna noticia-->
        <p class="alert" "<%= "display:none;" if alert.nil? %>"><%= alert %></p>
+      <!-- no agarra el espacio superior
+      < if notice %>
+     	 <p class="notice"> <%= notice %></p>
+      <end%>
+
+      < if alert %>
+     	 <p class="alert"> <%= alert %></p>
+      <end%>-->
+
        <header>
 	       	<nav>
 	       		<ul class="nav nav-tabs"><!--hacemos uso de bootstrap-->
 	       			<li>
 	       				<%= link_to "Inicio", root_path %>
+	       			</li>
+	       			<li>
+	       				<%= link_to "Posts", posts_path %>
 	       			</li>
 	       			<% if user_signed_in? %>
 	       				<li>
