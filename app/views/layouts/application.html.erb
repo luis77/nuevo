@@ -27,6 +27,9 @@
 	       			<li>
 	       				<%= link_to "Posts", posts_path %>
 	       			</li>
+	       			<li>
+	       				<%= link_to "Attachments", attachments_path %>
+	       			</li>
 	       			<% if user_signed_in? %>
 	       				<li>
 	       					<%= link_to "Editar Perfil", edit_user_registration_path(current_user) %> <!--current user es el usuario que este logeado-->

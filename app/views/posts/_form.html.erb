@@ -11,19 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group"><!--form-group es una clase de Bootstrap-->
     <%= f.label :titulo %><br>
-    <%= f.text_field :titulo %>
+    <%= f.text_field :titulo, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
+    <%= f.label :archivo %><br>
+    <%= f.file_field :archivo, class: "form-control" %>
+  </div>
+  <div class="form-group">
     <%= f.label :contenido %><br>
-    <%= f.text_area :contenido %>
-  </div>
-  <div class="field">
-    <%= f.label :extension %><br>
-    <%= f.text_field :extension %>
+    <%= f.text_area :contenido, class: "form-control" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Subir post", class: "btn btn-info" %>
   </div>
 <% end %>
