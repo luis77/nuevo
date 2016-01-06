@@ -32,11 +32,15 @@
 	       			</li>
 	       			<% if user_signed_in? %>
 	       				<li>
+	       					<%= link_to "Mi perfil", current_user%> <!--debo de desplegar el usuario en las rutas-->
+	       				</li>
+	       				<li>
 	       					<%= link_to "Editar Perfil", edit_user_registration_path(current_user) %> <!--current user es el usuario que este logeado-->
 	       				</li>
 	       				<li>
 	       					<%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %>
 	       				</li>
+
 	       			<%else%>
 	       				<li>
 	       					<%= link_to "Ingresar", new_user_session_path %>

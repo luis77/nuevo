@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   passwords: "users/passwords",
   omniauth_callbacks: "users/omniauth_callbacks"}
 
+  resources :user
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.

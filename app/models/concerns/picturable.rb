@@ -23,7 +23,7 @@ module Picturable
 	end
 
 	def path_archivo
-		File.join PATH_ARCHIVOS, "#{self.id}.#{self.extension}"   #devuelve la ruta especifica de ese archivo
+		File.join PATH_ARCHIVOS, "#{self.id}.#{self.extension}"   #devuelve la ruta especifica de ese archivo. coloca el nombre y la extension cuando cuarda la imagen. ej: para el attachment id 1 la imagen se llamara 1 y la extension
 	end
 
 	def tiene_archivo?
